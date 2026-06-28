@@ -1,0 +1,121 @@
+
+
+.row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.row:hover {
+  background: var(--surface-hover);
+}
+
+/* Alternating row background for readability on large datasets */
+.rowAlt {
+  background: var(--surface-alt);
+}
+
+.rowAlt:hover {
+  background: var(--surface-hover);
+}
+
+.td {
+  padding: 12px 16px;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowIndex {
+  color: var(--text-muted);
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Avatar circle showing user initials */
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Avatar color variants */
+.avPurple { background: var(--av-purple-bg); color: var(--av-purple-text); }
+.avAmber  { background: var(--av-amber-bg);  color: var(--av-amber-text);  }
+.avRed    { background: var(--av-red-bg);    color: var(--av-red-text);    }
+.avPink   { background: var(--av-pink-bg);   color: var(--av-pink-text);   }
+.avGreen  { background: var(--av-green-bg);  color: var(--av-green-text);  }
+
+.firstName {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.cellText {
+  color: var(--text-primary);
+}
+
+.emailText {
+  color: var(--text-secondary);
+}
+
+/* Department badge pill */
+.badge {
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Badge color variants per department */
+.badgeIT    { background: var(--badge-it-bg);    color: var(--badge-it-text);    }
+.badgeEng   { background: var(--badge-eng-bg);   color: var(--badge-eng-text);   }
+.badgeSales { background: var(--badge-sales-bg); color: var(--badge-sales-text); }
+.badgeHR    { background: var(--badge-hr-bg);    color: var(--badge-hr-text);    }
+.badgeMkt   { background: var(--badge-mkt-bg);   color: var(--badge-mkt-text);   }
+
+.actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.editBtn {
+  padding: 5px 10px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 12px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.editBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+.deleteBtn {
+  padding: 5px 10px;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font-size: 12px;
+  transition: opacity 0.2s ease;
+}
+
+.deleteBtn:hover {
+  opacity: 0.8;
+}

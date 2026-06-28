@@ -1,0 +1,48 @@
+/* UserTable.module.css */
+/* Horizontal scroll on small screens prevents layout breaking. */
+
+.tableWrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 620px;
+}
+
+.headerRow {
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.th {
+  text-align: left;
+  padding: 11px 16px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Sortable headers get a pointer and highlight on hover */
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+.sortable:hover {
+  color: var(--text-primary);
+}
+
+.sortIcon {
+  color: var(--primary);
+  font-size: 12px;
+  margin-left: 2px;
+}
