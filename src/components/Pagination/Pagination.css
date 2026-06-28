@@ -1,0 +1,106 @@
+/* Pagination.module.css */
+/* Bottom bar with page info on the left and controls on the right. */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.info {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Page size dropdown */
+.pageSizeSelect {
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.pageSizeSelect:focus {
+  border-color: var(--primary);
+}
+
+/* Prev / Next navigation buttons */
+.navBtn {
+  padding: 6px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.navBtn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+/* Disabled state for prev on page 1 and next on last page */
+.navBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Numbered page buttons */
+.pageBtn {
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  min-width: 36px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.pageBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+/* Active page gets purple highlight */
+.activePage {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+.ellipsis {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+@media (max-width: 560px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
