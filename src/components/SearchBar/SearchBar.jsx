@@ -3,7 +3,7 @@
 // Kept separate from App.jsx to keep the root component clean.
 import { FaReact } from "react-icons/fa";
 
-import styles from "./SearchBar.module.css";
+import styles from "./SearchBar.css";
 
 const SearchBar = ({ searchQuery, onSearchChange, onFilterClick, activeFilters }) => {
 

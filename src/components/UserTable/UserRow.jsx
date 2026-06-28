@@ -4,7 +4,7 @@
 // so each user consistently gets the same color.
 
 import { getInitials } from "../../utils/helpers";
-import styles from "./UserRow.module.css";
+import styles from "./UserRow.css";
 
 // Maps department names to CSS module class names for badge styling
 const DEPARTMENT_BADGE_MAP = {
