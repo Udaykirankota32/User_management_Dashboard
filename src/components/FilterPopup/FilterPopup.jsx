@@ -1,7 +1,4 @@
-// FilterPopup.jsx
-// Modal popup for filtering users by specific fields.
-// Filters are applied only when the user clicks "Apply" —
-// not on every keystroke, unlike the search bar.
+
 
 import { useState } from "react";
 import { DEPARTMENTS } from "../../utils/constants";
