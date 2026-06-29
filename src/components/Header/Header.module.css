@@ -1,0 +1,80 @@
+/* Header.module.css */
+/* Sticky top bar with app branding and the global Add User action.
+   Uses CSS variables so it automatically adapts to the dark theme. */
+
+.header {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Purple logo box using the primary token — no hardcoded colors */
+.logo {
+  width: 42px;
+  height: 42px;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.addBtn {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.addBtn:hover {
+  background-color: var(--primary-hover);
+}
+
+@media (max-width: 480px) {
+  .subtitle {
+    display: none;
+  }
+
+  .addBtn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}

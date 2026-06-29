@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { DEPARTMENTS } from "../../utils/constants";
-import styles from "./FilterPopup.css";
+import styles from "./FilterPopup.module.css";
 
 const FilterPopup = ({ filters, onApply, onClose }) => {
 

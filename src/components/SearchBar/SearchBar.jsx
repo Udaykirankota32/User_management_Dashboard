@@ -1,8 +1,8 @@
 // SearchBar.jsx
 // Handles the search input and the filter trigger button.
 // Kept separate from App.jsx to keep the root component clean.
-import { FaReact } from "react-icons/fa";
 
+import { FiSearch, FiX, FiSliders } from "react-icons/fi";
 import styles from "./SearchBar.module.css";
 
 const SearchBar = ({ searchQuery, onSearchChange, onFilterClick, activeFilters }) => {
@@ -12,8 +12,9 @@ const SearchBar = ({ searchQuery, onSearchChange, onFilterClick, activeFilters }
 
   return (
     <div className={styles.wrapper}>
+
       <div className={styles.searchBox}>
-        <span className={styles.searchIcon}>&#128269;</span>
+        <FiSearch className={styles.searchIcon} />
         <input
           type="text"
           className={styles.input}
@@ -28,19 +29,19 @@ const SearchBar = ({ searchQuery, onSearchChange, onFilterClick, activeFilters }
             onClick={() => onSearchChange("")}
             aria-label="Clear search"
           >
-            ✕
+            <FiX size={14} />
           </button>
         )}
       </div>
 
       <button className={styles.filterBtn} onClick={onFilterClick}>
-        <FaReact className={styles.filterIcon} />
+        <FiSliders size={14} />
         <span>Filters</span>
-
         {activeFilterCount > 0 && (
-            <span className={styles.filterBadge}>{activeFilterCount}</span>
+          <span className={styles.filterBadge}>{activeFilterCount}</span>
         )}
-    </button>
+      </button>
+
     </div>
   );
 };
