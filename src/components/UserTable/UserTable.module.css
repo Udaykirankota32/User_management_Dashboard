@@ -136,3 +136,20 @@
 .deleteBtn:hover {
   opacity: 0.8;
 }
+/* Desktop — show table, hide cards */
+.cardList {
+  display: none;
+}
+
+/* Mobile — hide table, show cards only */
+@media (max-width: 768px) {
+  .tableWrapper {
+    display: none;
+  }
+
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
