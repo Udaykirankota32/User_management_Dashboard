@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import useUsers from "./hooks/useUsers";
-import { SORT_ORDER, SORT_FIELDS } from "./utils/Constants";
+import { SORT_ORDER, SORT_FIELDS } from "./utils/constants";
 
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
