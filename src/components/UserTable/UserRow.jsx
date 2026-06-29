@@ -3,6 +3,7 @@
 // Avatar color cycles through 5 options based on user id
 // so each user consistently gets the same color.
 
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { getInitials } from "../../utils/helpers";
 import styles from "./UserRow.module.css";
 
@@ -60,14 +61,15 @@ const UserRow = ({ user, index, onEdit, onDelete }) => {
             onClick={() => onEdit(user)}
             aria-label={`Edit ${user.firstName} ${user.lastName}`}
           >
-            ✏ Edit
+            <FiEdit2 size={13} />
+            <span>Edit</span>
           </button>
           <button
             className={styles.deleteBtn}
             onClick={() => onDelete(user)}
             aria-label={`Delete ${user.firstName} ${user.lastName}`}
           >
-            🗑
+            <FiTrash2 size={13} />
           </button>
         </div>
       </td>
