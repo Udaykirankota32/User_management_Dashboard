@@ -4,7 +4,7 @@
 // so each user consistently gets the same color.
 
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
-import { getInitials } from "../../utils/helpers";
+import { getInitials } from "../../utils/helpers_temp";
 import styles from "./UserRow.module.css";
 
 // Maps department names to CSS module class names for badge styling

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "../utils/constants";
+import { API_URL } from "../utils/constants_temp";
 
 export const getUsers = () => axios.get(API_URL);
 

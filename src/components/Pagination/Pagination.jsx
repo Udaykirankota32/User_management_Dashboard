@@ -3,7 +3,7 @@
 // All slicing logic lives in App.jsx — this component
 // only fires callbacks and displays the current state.
 
-import { PAGE_SIZE_OPTIONS } from "../../utils/constants";
+import { PAGE_SIZE_OPTIONS } from "../../utils/constants_temp";
 import styles from "./Pagination.module.css";
 
 const Pagination = ({

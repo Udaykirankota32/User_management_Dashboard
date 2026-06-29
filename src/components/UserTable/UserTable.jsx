@@ -4,7 +4,7 @@
 
 import UserRow from "./UserRow";
 import UserCard from "./UserCard";
-import { SORT_FIELDS, SORT_ORDER } from "../../utils/constants";
+import { SORT_FIELDS, SORT_ORDER } from "../../utils/constants_temp";
 import styles from "./UserTable.module.css";
 
 const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) => {

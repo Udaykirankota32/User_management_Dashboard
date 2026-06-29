@@ -3,7 +3,7 @@
 // Hidden on desktop via CSS — shown only on small screens.
 
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
-import { getInitials } from "../../utils/helpers";
+import { getInitials } from "../../utils/helpers_temp";
 import styles from "./UserCard.module.css";
 
 const DEPARTMENT_BADGE_MAP = {

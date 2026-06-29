@@ -2,7 +2,7 @@
 // General-purpose utility functions shared across the application.
 // Kept here to avoid duplicating logic in individual components.
 
-import { DEPARTMENTS } from "./constants";
+import { DEPARTMENTS } from "./constants_temp";
 
 // Maps a raw API user object to our internal user shape.
 // The API returns a single `name` field, so we split it into firstName and lastName.

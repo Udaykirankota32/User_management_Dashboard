@@ -4,7 +4,7 @@
 // the form switches to edit mode automatically.
 
 import { useState, useEffect } from "react";
-import { DEPARTMENTS } from "../../utils/constants";
+import { DEPARTMENTS } from "../../utils/constants_temp";
 import { validateUserForm } from "../../utils/validators";
 import styles from "./UserForm.module.css";
 
