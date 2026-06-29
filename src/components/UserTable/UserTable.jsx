@@ -1,31 +1,35 @@
 // UserTable.jsx
-// Renders the full table with sortable column headers.
-// Sorting logic lives in App.jsx — this component just fires the onSort callback.
+// Renders table on desktop, switches to card layout on mobile.
+// Both views share the same data and callbacks.
 
 import UserRow from "./UserRow";
+import UserCard from "./UserCard";
 import { SORT_FIELDS, SORT_ORDER } from "../../utils/constants";
 import styles from "./UserTable.module.css";
 
 const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) => {
 
-  // Helper to show the right sort arrow on the active column
   const getSortIndicator = (field) => {
     if (sortField !== field) return " ↕";
     return sortOrder === SORT_ORDER.ASC ? " ↑" : " ↓";
   };
 
+  if (users.length === 0) {
+    return (
+      <div className="empty-state">
+        <p>No users found matching your search or filters.</p>
+      </div>
+    );
+  }
+
   return (
-    <div className={styles.tableWrapper}>
-      {users.length === 0 ? (
-        <div className="empty-state">
-          <p>No users found matching your search or filters.</p>
-        </div>
-      ) : (
+    <>
+      {/* Desktop table view */}
+      <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead>
             <tr className={styles.headerRow}>
               <th className={styles.th}>#</th>
-
               <th
                 className={`${styles.th} ${styles.sortable}`}
                 onClick={() => onSort(SORT_FIELDS.FIRST_NAME)}
@@ -35,7 +39,6 @@ const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) =>
                   {getSortIndicator(SORT_FIELDS.FIRST_NAME)}
                 </span>
               </th>
-
               <th
                 className={`${styles.th} ${styles.sortable}`}
                 onClick={() => onSort(SORT_FIELDS.LAST_NAME)}
@@ -45,7 +48,6 @@ const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) =>
                   {getSortIndicator(SORT_FIELDS.LAST_NAME)}
                 </span>
               </th>
-
               <th
                 className={`${styles.th} ${styles.sortable}`}
                 onClick={() => onSort(SORT_FIELDS.EMAIL)}
@@ -55,7 +57,6 @@ const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) =>
                   {getSortIndicator(SORT_FIELDS.EMAIL)}
                 </span>
               </th>
-
               <th
                 className={`${styles.th} ${styles.sortable}`}
                 onClick={() => onSort(SORT_FIELDS.DEPARTMENT)}
@@ -65,11 +66,9 @@ const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) =>
                   {getSortIndicator(SORT_FIELDS.DEPARTMENT)}
                 </span>
               </th>
-
               <th className={styles.th}>Actions</th>
             </tr>
           </thead>
-
           <tbody>
             {users.map((user, index) => (
               <UserRow
@@ -82,8 +81,21 @@ const UserTable = ({ users, sortField, sortOrder, onSort, onEdit, onDelete }) =>
             ))}
           </tbody>
         </table>
-      )}
-    </div>
+      </div>
+
+      {/* Mobile card view */}
+      <div className={styles.cardList}>
+        {users.map((user, index) => (
+          <UserCard
+            key={user.id}
+            user={user}
+            index={index}
+            onEdit={onEdit}
+            onDelete={onDelete}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
